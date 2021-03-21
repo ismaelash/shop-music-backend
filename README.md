@@ -1,3 +1,4 @@
+
 <br />
   <h3 align="center">Shop Music Backend</h3>
 
@@ -50,6 +51,8 @@ https://www.serverless.com/framework/docs/providers/aws/
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+API_BASE_URL = https://qvvi1z1djl.execute-api.us-east-1.amazonaws.com/dev
+<br>
 View how use the API via [Collection of Postman](https://github.com/ismaelash/shop-music-backend/blob/main/provi-test-shop-music.postman_collection.json)
 
 ## Projects: 
