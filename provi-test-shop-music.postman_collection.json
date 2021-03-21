@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "2c6d8eca-ccdb-49ee-952d-133afee9fa3f",
+		"name": "provi-test/shop-music",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPlaylists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL_BASE}}/get-playlists",
+					"host": [
+						"{{API_URL_BASE}}"
+					],
+					"path": [
+						"get-playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMusics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL_BASE}}/get-musics",
+					"host": [
+						"{{API_URL_BASE}}"
+					],
+					"path": [
+						"get-musics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMusicsByplaylist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_URL_BASE}}/get-musics-by-playlist/5",
+					"host": [
+						"{{API_URL_BASE}}"
+					],
+					"path": [
+						"get-musics-by-playlist",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postSong",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"playlist_id\": 5,\r\n    \"name\": \"Via postman\",\r\n    \"artist\": \"Jovem Dex, Hash Produções\",\r\n    \"url\": \"https://provi-test.s3.amazonaws.com/musics/yt1s.com+-+Jovemdex++Tapa++V%C3%ADdeo+Oficial.mp3\",\r\n    \"duration\": \"02:52\",\r\n    \"tag\": \"maneiro\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL_BASE}}/post-song",
+					"host": [
+						"{{API_URL_BASE}}"
+					],
+					"path": [
+						"post-song"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPlaylist",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Via postman\",\r\n    \"coverurl\": \"https://i.scdn.co/image/ab67706f00000003022dd43c1d92dff8b301db2b\",\r\n    \"description\": \"Hits e clássicos para jogar sua energia lá em cima!\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_URL_BASE}}/post-playlist",
+					"host": [
+						"{{API_URL_BASE}}"
+					],
+					"path": [
+						"post-playlist"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

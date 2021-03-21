@@ -1,0 +1,102 @@
+org: ismaelnascimentoash
+app: provi-test
+service: shop-music
+
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  getMusicsByplaylist:
+    handler: get-musics-by-playlist.handler
+    events:
+      - http:
+          path: /get-musics-by-playlist/{id}
+          method: get
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+  getMusics:
+    handler: get-musics.handler
+    events:
+      - http:
+          path: /get-musics
+          method: get
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+  getPlaylists:
+    handler: get-playlists.handler
+    events:
+      - http:
+          path: /get-playlists
+          method: get
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+  postPlaylist:
+    handler: post-playlist.handler
+    events:
+      - http:
+          path: /post-playlist
+          method: post
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+  postSong:
+    handler: post-song.handler
+    events:
+      - http:
+          path: /post-song
+          method: post
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+
+custom:
+  DB_USER: ${param:DB_USER}
+  DB_PASS: ${param:DB_PASS}
+  DB_HOST: ${param:DB_HOST}
+  DB_PORT: ${param:DB_PORT}
+  DB_DATABASE: ${param:DB_DATABASE}
+  DB_SCHEME: ${param:DB_SCHEME}
+  DB_TABLE_MUSIC: ${param:DB_TABLE_MUSIC}
+  DB_TABLE_PLAYLIST: ${param:DB_TABLE_PLAYLIST}

@@ -1,0 +1,14 @@
+{
+  "name": "shop-music-backend",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "postgres": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "serverless deploy --aws-profile serverless_framework_provi-test_agent --verbose"
+  },
+  "author": "Ismael Nascimento 'Ash'",
+  "license": "ISC"
+}
