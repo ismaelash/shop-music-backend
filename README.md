@@ -17,7 +17,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The best songs for your clients, for the moment of buy shop
+The best songs for your clients, for the moment of buy on shop
 
 ### Built With
 
