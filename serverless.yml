@@ -58,6 +58,22 @@ functions:
       DB_SCHEME: ${self:custom.DB_SCHEME}
       DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
       DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
+  getSpots:
+    handler: get-spots.handler
+    events:
+      - http:
+          path: /get-spots
+          method: get
+          cors: true
+    environment:
+      DB_USER: ${self:custom.DB_USER}
+      DB_PASS: ${self:custom.DB_PASS}
+      DB_HOST: ${self:custom.DB_HOST}
+      DB_PORT: ${self:custom.DB_PORT}
+      DB_DATABASE: ${self:custom.DB_DATABASE}
+      DB_SCHEME: ${self:custom.DB_SCHEME}
+      DB_TABLE_MUSIC: ${self:custom.DB_TABLE_MUSIC}
+      DB_TABLE_PLAYLIST: ${self:custom.DB_TABLE_PLAYLIST}
   postPlaylist:
     handler: post-playlist.handler
     events:
