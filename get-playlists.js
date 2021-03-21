@@ -14,7 +14,7 @@ module.exports.handler = async (event) => {
 
   try {
     console.log(event);
-    const sqlResult = await postgreSQL`SELECT * FROM ${postgreSQL(scheme)}.${postgreSQL(table)};`;
+    const sqlResult = await postgreSQL`SELECT * FROM ${postgreSQL(scheme)}.${postgreSQL(table)} WHERE spot = FALSE;`;
     return Responses._200(sqlResult);
   } catch (err) {
     return Responses._400(err);
